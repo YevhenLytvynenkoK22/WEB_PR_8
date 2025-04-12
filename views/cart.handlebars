@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+{{#if cart.length}}
+  <ul>
+    {{#each cart}}
+      <li>
+        {{name}} — {{price}} грн
+        <form method="POST" action="/cart/delete/{{id}}">
+          <button>Видалити</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+  <p><strong>Загальна сума:</strong> {{total}} грн</p>
+{{else}}
+  <p>🛒 Ваш кошик порожній.</p>
+{{/if}}
